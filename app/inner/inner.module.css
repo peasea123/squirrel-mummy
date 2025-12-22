@@ -93,12 +93,12 @@
 
 .tombMessage {
   font-size: 3.5rem;
-  font-weight: 900;
+  font-weight: 700;
   color: #c4b496;
   letter-spacing: 0.2em;
   margin: 0;
   text-transform: uppercase;
-  font-family: 'Arial Black', sans-serif;
+  font-family: Georgia, serif;
   text-shadow: 0 0 30px rgba(196, 180, 150, 0.5), 2px 2px 4px rgba(0, 0, 0, 0.8);
   animation: tombPulse 0.8s ease-in-out infinite;
 }

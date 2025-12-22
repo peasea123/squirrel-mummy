@@ -33,6 +33,7 @@ export default function InnerPage() {
     const handleKeyDown = (e) => {
       keys[e.key.toLowerCase()] = true;
       
+      // Alt+S+M to navigate directly
       if (keys['alt'] && keys['s'] && keys['m']) {
         e.preventDefault();
         
@@ -42,6 +43,17 @@ export default function InnerPage() {
         squirrelAudio.play().catch(() => {});
         
         router.push('/deeper');
+      }
+      
+      // Shift+Space to show countdown overlay (desktop preview)
+      if (keys['shift'] && e.code === 'Space') {
+        e.preventDefault();
+        setCountdown(1);
+        
+        setTimeout(() => {
+          setCountdown(0);
+          router.push('/deeper');
+        }, 3000);
       }
     };
     
