@@ -22,11 +22,11 @@
 
 .title {
   font-size: 2rem;
-  font-weight: 900;
-  letter-spacing: 0.15em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   margin-bottom: 20px;
   color: #fff;
-  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-family: Georgia, serif;
 }
 
 .instruction {
@@ -79,13 +79,13 @@
   padding: 12px 24px;
   font-size: 16px;
   cursor: pointer;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   transition: all 0.3s ease;
   font-weight: 700;
   text-transform: uppercase;
   -webkit-appearance: none;
   appearance: none;
-  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-family: Georgia, serif;
 }
 
 .button:hover:not(:disabled) {

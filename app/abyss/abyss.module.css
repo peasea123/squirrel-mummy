@@ -17,20 +17,20 @@
 
 .title {
   font-size: 2.5rem;
-  font-weight: 900;
-  letter-spacing: 0.15em;
-  margin-bottom: 40px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 30px;
   color: #fff;
   text-transform: uppercase;
-  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-family: Georgia, serif;
 }
 
 .textBlock {
-  font-size: 1.1rem;
-  line-height: 1.8;
+  font-size: 1rem;
+  line-height: 1.6;
   color: #888;
   letter-spacing: 0.02em;
-  margin-bottom: 40px;
+  margin-bottom: 25px;
 }
 
 .textBlock p {
@@ -47,11 +47,11 @@
   width: 60px;
   height: 1px;
   background-color: #222;
-  margin: 40px auto;
+  margin: 20px auto;
 }
 
 .symbolBlock {
-  margin: 40px 0;
+  margin: 20px 0;
 }
 
 .symbol {
@@ -63,18 +63,18 @@
 }
 
 .closing {
-  margin-top: 40px;
-  font-size: 0.95rem;
+  margin-top: 20px;
+  font-size: 0.85rem;
   color: #666;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   font-style: italic;
   text-transform: uppercase;
   font-weight: 700;
 }
 
 .reward {
-  margin-top: 60px;
-  padding: 30px;
+  margin-top: 30px;
+  padding: 20px;
   background-color: rgba(196, 180, 150, 0.05);
   border: 1px solid rgba(196, 180, 150, 0.2);
   border-radius: 2px;
@@ -82,23 +82,23 @@
 }
 
 .rewardLabel {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: #888;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin: 0 0 15px 0;
+  margin: 0 0 10px 0;
   font-weight: 700;
 }
 
 .rewardText {
-  font-size: 2.2rem;
-  font-weight: 900;
-  letter-spacing: 0.15em;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   color: #c4b496;
   text-shadow: 0 0 20px rgba(196, 180, 150, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.8);
   margin: 0;
   text-transform: uppercase;
-  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-family: Georgia, serif;
 }
 
 @keyframes rewardGlow {
