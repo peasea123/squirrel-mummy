@@ -91,15 +91,14 @@
 }
 
 .rewardText {
-  font-size: 1.4rem;
+  font-size: 2.2rem;
   font-weight: 900;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
   color: #c4b496;
   text-shadow: 0 0 20px rgba(196, 180, 150, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.8);
   margin: 0;
   text-transform: uppercase;
   font-family: 'Impact', 'Arial Black', sans-serif;
-  line-height: 1.4;
 }
 
 @keyframes rewardGlow {

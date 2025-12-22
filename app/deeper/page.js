@@ -31,11 +31,6 @@ export default function DeeperPage() {
     const newSequence = [...clickSequence, boxId];
     setClickSequence(newSequence);
 
-    // Play squirrel sound
-    const squirrelAudio = new Audio('/squirrel.m4a');
-    squirrelAudio.volume = 0.5;
-    squirrelAudio.play().catch(() => {});
-
     // If this is the 3rd click, check if sequence is correct
     if (newSequence.length === 3) {
       const isCorrect = 
@@ -44,11 +39,11 @@ export default function DeeperPage() {
         newSequence[2] === 'center';
 
       if (isCorrect) {
-        // Correct sequence - navigate after delay
+        // Correct sequence - play sound and navigate after delay
         setTimeout(() => {
-          const finalAudio = new Audio('/squirrel.m4a');
-          finalAudio.volume = 0.7;
-          finalAudio.play().catch(() => {});
+          const squirrelAudio = new Audio('/squirrel.m4a');
+          squirrelAudio.volume = 0.7;
+          squirrelAudio.play().catch(() => {});
         }, 300);
 
         setTimeout(() => {

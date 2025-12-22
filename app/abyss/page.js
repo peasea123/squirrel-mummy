@@ -67,8 +67,8 @@ export default function AbyssPage() {
         </p>
 
         <div className={styles.reward}>
-          <p className={styles.rewardLabel}>The Reward:</p>
-          <p className={styles.rewardText}>Use This Secret Password for Entry : Fuzzy Tail</p>
+          <p className={styles.rewardLabel}>The Password:</p>
+          <p className={styles.rewardText}>Fuzzy Tail</p>
         </div>
       </div>
     </div>
