@@ -28,7 +28,11 @@ export default function EnterPage() {
 
       if (data.success) {
         sessionStorage.setItem('squirrel_auth', 'true');
-        router.push('/inner');
+        setError('');
+        // Small delay to ensure state updates before navigation
+        setTimeout(() => {
+          router.push('/inner');
+        }, 100);
       } else {
         setError('Access denied. The knowledge you seek remains veiled.');
         setPassword('');
