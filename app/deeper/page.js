@@ -26,6 +26,8 @@ export default function DeeperPage() {
   }, [router]);
 
   const handleBoxClick = (boxId) => {
+    if (clickSequence.length >= 3) return; // Prevent more clicks after 3
+
     const newSequence = [...clickSequence, boxId];
     setClickSequence(newSequence);
 
@@ -34,28 +36,30 @@ export default function DeeperPage() {
     squirrelAudio.volume = 0.5;
     squirrelAudio.play().catch(() => {});
 
-    // Check if the sequence is correct so far
-    if (newSequence[newSequence.length - 1] !== correctSequence[newSequence.length - 1]) {
-      // Wrong sequence - reset after 500ms
-      setTimeout(() => {
-        setClickSequence([]);
-      }, 500);
-      return;
-    }
+    // If this is the 3rd click, check if sequence is correct
+    if (newSequence.length === 3) {
+      const isCorrect = 
+        newSequence[0] === 'left' && 
+        newSequence[1] === 'right' && 
+        newSequence[2] === 'center';
 
-    // If sequence is complete and correct
-    if (newSequence.length === correctSequence.length) {
-      // Play final squirrel sound
-      setTimeout(() => {
-        const finalAudio = new Audio('/squirrel.m4a');
-        finalAudio.volume = 0.7;
-        finalAudio.play().catch(() => {});
-      }, 300);
+      if (isCorrect) {
+        // Correct sequence - navigate after delay
+        setTimeout(() => {
+          const finalAudio = new Audio('/squirrel.m4a');
+          finalAudio.volume = 0.7;
+          finalAudio.play().catch(() => {});
+        }, 300);
 
-      // Navigate to the abyss
-      setTimeout(() => {
-        router.push('/abyss');
-      }, 1000);
+        setTimeout(() => {
+          router.push('/abyss');
+        }, 1500);
+      } else {
+        // Wrong sequence - dim buttons and reset after 1.5 seconds
+        setTimeout(() => {
+          setClickSequence([]);
+        }, 1500);
+      }
     }
   };
 
@@ -101,17 +105,17 @@ export default function DeeperPage() {
 
         <div className={styles.hiddenButtonsContainer}>
           <button 
-            className={`${styles.hiddenButton} ${clickSequence.length > 0 && clickSequence[0] === 'left' ? styles.active : ''}`}
+            className={`${styles.hiddenButton} ${clickSequence.length > 0 && clickSequence[0] === 'left' ? styles.active : ''} ${clickSequence.length === 3 && clickSequence[0] !== 'left' ? styles.incorrect : ''}`}
             onClick={() => handleBoxClick('left')}
             title="⬚"
           />
           <button 
-            className={`${styles.hiddenButton} ${clickSequence.length > 1 && clickSequence[1] === 'right' ? styles.active : ''}`}
+            className={`${styles.hiddenButton} ${clickSequence.length > 1 && clickSequence[1] === 'right' ? styles.active : ''} ${clickSequence.length === 3 && clickSequence[1] !== 'right' ? styles.incorrect : ''}`}
             onClick={() => handleBoxClick('right')}
             title="⬚"
           />
           <button 
-            className={`${styles.hiddenButton} ${clickSequence.length > 2 && clickSequence[2] === 'center' ? styles.active : ''}`}
+            className={`${styles.hiddenButton} ${clickSequence.length > 2 && clickSequence[2] === 'center' ? styles.active : ''} ${clickSequence.length === 3 && clickSequence[2] !== 'center' ? styles.incorrect : ''}`}
             onClick={() => handleBoxClick('center')}
             title="⬚"
           />

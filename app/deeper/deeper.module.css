@@ -73,12 +73,13 @@
 
 .hiddenButtonsContainer {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 40px;
   margin-top: 50px;
-  min-height: 120px;
+  width: 100%;
+  min-height: 60px;
 }
 
 .hiddenButton {
@@ -89,6 +90,7 @@
   cursor: pointer;
   transition: all 0.2s ease;
   border-radius: 2px;
+  flex-shrink: 0;
 }
 
 .hiddenButton:hover {
@@ -97,9 +99,27 @@
 }
 
 .hiddenButton.active {
-  background-color: rgba(196, 180, 150, 0.2);
+  background-color: rgba(196, 180, 150, 0.3);
   border-color: #c4b496;
-  box-shadow: 0 0 10px rgba(196, 180, 150, 0.2);
+  box-shadow: 0 0 10px rgba(196, 180, 150, 0.3);
+}
+
+.hiddenButton.incorrect {
+  background-color: rgba(255, 100, 100, 0.2);
+  border-color: rgba(255, 100, 100, 0.4);
+  animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-3px);
+  }
+  75% {
+    transform: translateX(3px);
+  }
 }
 
 .loadingText {
