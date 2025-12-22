@@ -3,6 +3,7 @@ import './globals.css';
 export const metadata = {
   title: 'Squirrel Mummy',
   description: 'A digital artifact',
+  viewport: 'width=device-width, initial-scale=1, viewport-fit=cover, minimal-ui',
   icons: {
     apple: '/apple-touch-icon.png',
     icon: [
