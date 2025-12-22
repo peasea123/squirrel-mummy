@@ -1,0 +1,94 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #050505;
+  padding: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.content {
+  max-width: 600px;
+  text-align: center;
+  animation: fadeIn 1.2s ease-in-out 0.2s both;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 40px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.textBlock {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #999;
+  letter-spacing: 0.02em;
+  margin-bottom: 40px;
+}
+
+.textBlock p {
+  margin-bottom: 16px;
+  font-style: italic;
+  text-wrap: balance;
+}
+
+.textBlock p:last-child {
+  margin-bottom: 0;
+}
+
+.divider {
+  width: 60px;
+  height: 1px;
+  background-color: #333;
+  margin: 40px auto;
+}
+
+.symbolBlock {
+  margin: 40px 0;
+}
+
+.symbol {
+  font-size: 1.5rem;
+  color: #444;
+  letter-spacing: 0.3em;
+  font-weight: 300;
+}
+
+.closing {
+  margin-top: 40px;
+  font-size: 0.95rem;
+  color: #777;
+  letter-spacing: 0.05em;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.loadingText {
+  color: #666;
+  font-style: italic;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .textBlock {
+    font-size: 1rem;
+  }
+}
