@@ -35,6 +35,12 @@ export default function InnerPage() {
       
       if (keys['alt'] && keys['s'] && keys['m']) {
         e.preventDefault();
+        
+        // Play squirrel sound on keyboard shortcut
+        const squirrelAudio = new Audio('/squirrel.m4a');
+        squirrelAudio.volume = 0.7;
+        squirrelAudio.play().catch(() => {});
+        
         router.push('/deeper');
       }
     };
@@ -123,8 +129,16 @@ export default function InnerPage() {
             clearInterval(countdownInterval);
             clearInterval(soundInterval);
             setCountdown(0);
+            
+            // Play squirrel sound before navigating
+            const navigationSound = new Audio('/squirrel.m4a');
+            navigationSound.volume = 0.7;
+            navigationSound.play().catch(() => {});
+            
             // Navigate to deeper page after countdown
-            router.push('/deeper');
+            setTimeout(() => {
+              router.push('/deeper');
+            }, 200);
           }
         }, 1000);
 

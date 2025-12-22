@@ -29,6 +29,12 @@ export default function EnterPage() {
       if (data.success) {
         sessionStorage.setItem('squirrel_auth', 'true');
         setError('');
+        
+        // Play squirrel sound on successful password
+        const squirrelAudio = new Audio('/squirrel.m4a');
+        squirrelAudio.volume = 0.7;
+        squirrelAudio.play().catch(() => {});
+        
         // Small delay to ensure state updates before navigation
         setTimeout(() => {
           router.push('/inner');
