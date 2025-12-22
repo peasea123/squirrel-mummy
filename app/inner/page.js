@@ -24,7 +24,7 @@ export default function InnerPage() {
     checkAuth();
   }, [router]);
 
-  // Keyboard shortcut: Ctrl+Shift+X
+  // Keyboard shortcut: Alt+S+M (Squirrel + Mummy)
   useEffect(() => {
     if (!isAuthorized) return;
 
@@ -33,7 +33,7 @@ export default function InnerPage() {
     const handleKeyDown = (e) => {
       keys[e.key.toLowerCase()] = true;
       
-      if (keys['control'] && keys['shift'] && keys['x']) {
+      if (keys['alt'] && keys['s'] && keys['m']) {
         e.preventDefault();
         router.push('/deeper');
       }
