@@ -32,6 +32,7 @@ export default function DeeperPage() {
     setClickSequence(newSequence);
 
     // If this is the 3rd click, check if sequence is correct
+    // Required order: Left (1st) → Right (2nd) → Center (3rd)
     if (newSequence.length === 3) {
       const isCorrect = 
         newSequence[0] === 'left' && 
@@ -99,6 +100,7 @@ export default function DeeperPage() {
         </p>
 
         <div className={styles.hiddenButtonsContainer}>
+          {/* Hidden button sequence: LEFT → RIGHT → CENTER (arranged left-to-right on screen) */}
           <button 
             className={`${styles.hiddenButton} ${clickSequence.includes('left') ? styles.active : ''} ${clickSequence.length === 3 && (clickSequence[0] !== 'left' || clickSequence[1] !== 'right' || clickSequence[2] !== 'center') ? styles.incorrect : ''}`}
             onClick={() => handleBoxClick('left')}
