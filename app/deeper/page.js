@@ -32,7 +32,8 @@ export default function DeeperPage() {
     setClickSequence(newSequence);
 
     // If this is the 3rd click, check if sequence is correct
-    // Required order: Left (1st) → Right (2nd) → Center (3rd)
+    // Visual positions left-to-right: 1=left, 2=center, 3=right
+    // Required click order: 1 → 3 → 2 (left → right → center)
     if (newSequence.length === 3) {
       const isCorrect = 
         newSequence[0] === 'left' && 
@@ -100,20 +101,20 @@ export default function DeeperPage() {
         </p>
 
         <div className={styles.hiddenButtonsContainer}>
-          {/* Hidden button sequence: LEFT → RIGHT → CENTER (arranged left-to-right on screen) */}
+          {/* Hidden button sequence (visual positions left to right = 1, 2, 3): 1 → 3 → 2 = LEFT → RIGHT → CENTER */}
           <button 
             className={`${styles.hiddenButton} ${clickSequence.includes('left') ? styles.active : ''} ${clickSequence.length === 3 && (clickSequence[0] !== 'left' || clickSequence[1] !== 'right' || clickSequence[2] !== 'center') ? styles.incorrect : ''}`}
             onClick={() => handleBoxClick('left')}
             title="⬚"
           />
           <button 
-            className={`${styles.hiddenButton} ${clickSequence.includes('right') ? styles.active : ''} ${clickSequence.length === 3 && (clickSequence[0] !== 'left' || clickSequence[1] !== 'right' || clickSequence[2] !== 'center') ? styles.incorrect : ''}`}
-            onClick={() => handleBoxClick('right')}
+            className={`${styles.hiddenButton} ${clickSequence.includes('center') ? styles.active : ''} ${clickSequence.length === 3 && (clickSequence[0] !== 'left' || clickSequence[1] !== 'right' || clickSequence[2] !== 'center') ? styles.incorrect : ''}`}
+            onClick={() => handleBoxClick('center')}
             title="⬚"
           />
           <button 
-            className={`${styles.hiddenButton} ${clickSequence.includes('center') ? styles.active : ''} ${clickSequence.length === 3 && (clickSequence[0] !== 'left' || clickSequence[1] !== 'right' || clickSequence[2] !== 'center') ? styles.incorrect : ''}`}
-            onClick={() => handleBoxClick('center')}
+            className={`${styles.hiddenButton} ${clickSequence.includes('right') ? styles.active : ''} ${clickSequence.length === 3 && (clickSequence[0] !== 'left' || clickSequence[1] !== 'right' || clickSequence[2] !== 'center') ? styles.incorrect : ''}`}
+            onClick={() => handleBoxClick('right')}
             title="⬚"
           />
         </div>
