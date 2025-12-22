@@ -22,7 +22,7 @@
   margin-bottom: 40px;
   color: #fff;
   text-transform: uppercase;
-  font-family: 'Arial Black', sans-serif;
+  font-family: 'Impact', 'Arial Black', sans-serif;
 }
 
 .textBlock {
@@ -70,6 +70,44 @@
   font-style: italic;
   text-transform: uppercase;
   font-weight: 700;
+}
+
+.reward {
+  margin-top: 60px;
+  padding: 30px;
+  background-color: rgba(196, 180, 150, 0.05);
+  border: 1px solid rgba(196, 180, 150, 0.2);
+  border-radius: 2px;
+  animation: rewardGlow 2s ease-in-out infinite;
+}
+
+.rewardLabel {
+  font-size: 0.85rem;
+  color: #888;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 0 15px 0;
+  font-weight: 700;
+}
+
+.rewardText {
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  color: #c4b496;
+  text-shadow: 0 0 20px rgba(196, 180, 150, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.8);
+  margin: 0;
+  text-transform: uppercase;
+  font-family: 'Impact', 'Arial Black', sans-serif;
+}
+
+@keyframes rewardGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(196, 180, 150, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(196, 180, 150, 0.2);
+  }
 }
 
 .loadingText {

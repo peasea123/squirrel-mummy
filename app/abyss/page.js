@@ -65,6 +65,11 @@ export default function AbyssPage() {
         <p className={styles.closing}>
           You are now one of us.
         </p>
+
+        <div className={styles.reward}>
+          <p className={styles.rewardLabel}>The Reward:</p>
+          <p className={styles.rewardText}>Fuzzy Tail</p>
+        </div>
       </div>
     </div>
   );

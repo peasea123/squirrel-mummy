@@ -101,16 +101,19 @@ export default function DeeperPage() {
 
         <div className={styles.hiddenButtonsContainer}>
           <button 
-            className={`${styles.hiddenButton} ${styles.left} ${clickSequence.includes('left') ? styles.active : ''}`}
+            className={`${styles.hiddenButton} ${clickSequence.length > 0 && clickSequence[0] === 'left' ? styles.active : ''}`}
             onClick={() => handleBoxClick('left')}
+            title="⬚"
           />
           <button 
-            className={`${styles.hiddenButton} ${styles.right} ${clickSequence.includes('right') ? styles.active : ''}`}
+            className={`${styles.hiddenButton} ${clickSequence.length > 1 && clickSequence[1] === 'right' ? styles.active : ''}`}
             onClick={() => handleBoxClick('right')}
+            title="⬚"
           />
           <button 
-            className={`${styles.hiddenButton} ${styles.center} ${clickSequence.includes('center') ? styles.active : ''}`}
+            className={`${styles.hiddenButton} ${clickSequence.length > 2 && clickSequence[2] === 'center' ? styles.active : ''}`}
             onClick={() => handleBoxClick('center')}
+            title="⬚"
           />
         </div>
       </div>

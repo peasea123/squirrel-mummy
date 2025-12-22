@@ -47,6 +47,7 @@
   letter-spacing: 0.05em;
   font-style: italic;
   margin-bottom: 24px;
+  font-weight: 700;
   text-shadow: 
     -1.5px -1.5px 0 #000,
     1.5px -1.5px 0 #000,
@@ -75,6 +76,9 @@
   background-color: rgba(0, 0, 0, 0.5);
   filter: drop-shadow(0 0 8px rgba(0, 0, 0, 1)) drop-shadow(0 0 8px rgba(0, 0, 0, 0.9));
   transition: all 0.4s ease;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  font-family: 'Impact', 'Arial Black', sans-serif;
 }
 
 .enterButton button:hover {
