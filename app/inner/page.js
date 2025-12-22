@@ -123,6 +123,8 @@ export default function InnerPage() {
             clearInterval(countdownInterval);
             clearInterval(soundInterval);
             setCountdown(0);
+            // Navigate to deeper page after countdown
+            router.push('/deeper');
           }
         }, 1000);
 
