@@ -100,17 +100,17 @@ export default function DeeperPage() {
 
         <div className={styles.hiddenButtonsContainer}>
           <button 
-            className={`${styles.hiddenButton} ${clickSequence.length > 0 && clickSequence[0] === 'left' ? styles.active : ''} ${clickSequence.length === 3 && clickSequence[0] !== 'left' ? styles.incorrect : ''}`}
+            className={`${styles.hiddenButton} ${clickSequence.includes('left') ? styles.active : ''} ${clickSequence.length === 3 && (clickSequence[0] !== 'left' || clickSequence[1] !== 'right' || clickSequence[2] !== 'center') ? styles.incorrect : ''}`}
             onClick={() => handleBoxClick('left')}
             title="⬚"
           />
           <button 
-            className={`${styles.hiddenButton} ${clickSequence.length > 1 && clickSequence[1] === 'right' ? styles.active : ''} ${clickSequence.length === 3 && clickSequence[1] !== 'right' ? styles.incorrect : ''}`}
+            className={`${styles.hiddenButton} ${clickSequence.includes('right') ? styles.active : ''} ${clickSequence.length === 3 && (clickSequence[0] !== 'left' || clickSequence[1] !== 'right' || clickSequence[2] !== 'center') ? styles.incorrect : ''}`}
             onClick={() => handleBoxClick('right')}
             title="⬚"
           />
           <button 
-            className={`${styles.hiddenButton} ${clickSequence.length > 2 && clickSequence[2] === 'center' ? styles.active : ''} ${clickSequence.length === 3 && clickSequence[2] !== 'center' ? styles.incorrect : ''}`}
+            className={`${styles.hiddenButton} ${clickSequence.includes('center') ? styles.active : ''} ${clickSequence.length === 3 && (clickSequence[0] !== 'left' || clickSequence[1] !== 'right' || clickSequence[2] !== 'center') ? styles.incorrect : ''}`}
             onClick={() => handleBoxClick('center')}
             title="⬚"
           />
