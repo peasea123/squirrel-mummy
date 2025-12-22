@@ -54,6 +54,7 @@
   font-family: inherit;
   letter-spacing: 0.02em;
   box-sizing: border-box;
+  text-align: center;
 }
 
 .input::placeholder {
