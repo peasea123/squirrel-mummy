@@ -191,10 +191,6 @@ export default function InnerPage() {
           Speak of this to no one.
         </p>
 
-        <p className={styles.hint}>
-          *On mobile: Place three fingers on the screen, then swipe upward*
-        </p>
-
         {countdown > 0 && (
           <div className={styles.countdownOverlay}>
             <div className={styles.countdownText}>

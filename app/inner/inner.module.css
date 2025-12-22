@@ -69,15 +69,6 @@
   text-transform: uppercase;
 }
 
-.hint {
-  margin-top: 60px;
-  font-size: 0.85rem;
-  color: #666;
-  letter-spacing: 0.03em;
-  font-style: italic;
-  text-transform: uppercase;
-}
-
 .countdownOverlay {
   position: fixed;
   top: 0;
