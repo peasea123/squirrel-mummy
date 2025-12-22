@@ -110,37 +110,25 @@ export default function InnerPage() {
       if (Math.abs(diffY) > 100 && diffY < 0 && Math.abs(diffX) < 50) {
         countdownStarted = true;
         playBeep();
-        setCountdown(3);
+        setCountdown(1); // Flag to show overlay message
 
-        // Play squirrel sound on interval during countdown
-        let soundInterval = setInterval(() => {
-          const squirrelAudio = new Audio('/squirrel.m4a');
-          squirrelAudio.volume = 0.6;
-          squirrelAudio.play().catch(() => {});
-        }, 750);
+        // Play squirrel sound on swipe
+        const squirrelAudio = new Audio('/squirrel.m4a');
+        squirrelAudio.volume = 0.6;
+        squirrelAudio.play().catch(() => {});
 
-        // Countdown from 3 to 0
-        let count = 3;
-        countdownInterval = setInterval(() => {
-          count--;
-          setCountdown(count);
+        // 3 second delay before navigating
+        setTimeout(() => {
+          setCountdown(0);
           
-          if (count <= 0) {
-            clearInterval(countdownInterval);
-            clearInterval(soundInterval);
-            setCountdown(0);
-            
-            // Play squirrel sound before navigating
-            const navigationSound = new Audio('/squirrel.m4a');
-            navigationSound.volume = 0.7;
-            navigationSound.play().catch(() => {});
-            
-            // Navigate to deeper page after countdown
-            setTimeout(() => {
-              router.push('/deeper');
-            }, 200);
-          }
-        }, 1000);
+          // Play squirrel sound before navigating
+          const navigationSound = new Audio('/squirrel.m4a');
+          navigationSound.volume = 0.7;
+          navigationSound.play().catch(() => {});
+          
+          // Navigate to deeper page
+          router.push('/deeper');
+        }, 3000);
 
         // Reset after countdown
         setTimeout(() => {
@@ -208,8 +196,7 @@ export default function InnerPage() {
         {countdown > 0 && (
           <div className={styles.countdownOverlay}>
             <div className={styles.countdownText}>
-              <p>Three fingers. Swipe upward.</p>
-              <p className={styles.countdown}>{countdown}</p>
+              <p className={styles.tombMessage}>PREPARE TO ENTER THE TOMB</p>
             </div>
           </div>
         )}

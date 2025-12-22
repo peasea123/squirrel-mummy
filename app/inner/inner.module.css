@@ -17,11 +17,12 @@
 
 .title {
   font-size: 2.5rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-weight: 900;
+  letter-spacing: 0.15em;
   margin-bottom: 40px;
   color: #fff;
   text-transform: uppercase;
+  font-family: 'Arial Black', sans-serif;
 }
 
 .textBlock {
@@ -56,17 +57,19 @@
 .symbol {
   font-size: 1.5rem;
   color: #666;
-  letter-spacing: 0.3em;
-  font-weight: 300;
+  letter-spacing: 0.5em;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 
 .closing {
   margin-top: 40px;
   font-size: 0.95rem;
   color: #999;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   font-style: italic;
   text-transform: uppercase;
+  font-weight: 700;
 }
 
 .countdownOverlay {
@@ -78,7 +81,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.85);
   z-index: 1000;
   animation: fadeIn 0.3s ease-in-out;
 }
@@ -88,20 +91,27 @@
   animation: pulseIn 0.5s ease-out;
 }
 
-.countdownText p {
-  font-size: 1.2rem;
-  color: #ddd;
-  letter-spacing: 0.05em;
-  margin-bottom: 20px;
+.tombMessage {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #c4b496;
+  letter-spacing: 0.2em;
+  margin: 0;
+  text-transform: uppercase;
+  font-family: 'Arial Black', sans-serif;
+  text-shadow: 0 0 30px rgba(196, 180, 150, 0.5), 2px 2px 4px rgba(0, 0, 0, 0.8);
+  animation: tombPulse 0.8s ease-in-out infinite;
 }
 
-.countdown {
-  font-size: 4rem;
-  font-weight: 700;
-  color: #c4b496;
-  text-shadow: 0 0 20px rgba(196, 180, 150, 0.6);
-  margin: 0;
-  animation: countdownPulse 1s ease-in-out infinite;
+@keyframes tombPulse {
+  0%, 100% {
+    transform: scale(1) skewY(-2deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05) skewY(2deg);
+    opacity: 0.9;
+  }
 }
 
 @keyframes pulseIn {
