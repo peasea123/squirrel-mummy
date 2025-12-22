@@ -1,0 +1,87 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  padding: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.content {
+  max-width: 600px;
+  text-align: center;
+  animation: fadeIn 1.2s ease-in-out 0.2s both;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  margin-bottom: 40px;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'Arial Black', sans-serif;
+}
+
+.textBlock {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #888;
+  letter-spacing: 0.02em;
+  margin-bottom: 40px;
+}
+
+.textBlock p {
+  margin-bottom: 16px;
+  font-style: italic;
+  text-wrap: balance;
+}
+
+.textBlock p:last-child {
+  margin-bottom: 0;
+}
+
+.divider {
+  width: 60px;
+  height: 1px;
+  background-color: #222;
+  margin: 40px auto;
+}
+
+.symbolBlock {
+  margin: 40px 0;
+}
+
+.symbol {
+  font-size: 3rem;
+  color: #333;
+  letter-spacing: 0.5em;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.closing {
+  margin-top: 40px;
+  font-size: 0.95rem;
+  color: #666;
+  letter-spacing: 0.1em;
+  font-style: italic;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.loadingText {
+  color: #444;
+  font-style: italic;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
